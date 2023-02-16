@@ -1,34 +1,40 @@
 import { Box, Button } from "@mui/material";
+import { blueGrey } from "@mui/material/colors";
+import { Route, Routes } from "react-router";
 import { Layout } from "./components/Layout";
-import { useToast } from "./hooks";
-// import { NestedModal } from "./contexts/ModalContext";
-// import { FormDialog } from "./contexts/DialogContext";
-import { useDialog } from "./hooks/useDialog";
+import { CategoriesScreen, HomeScreen } from "./Pages";
+// import { useToast } from "./hooks";
+// import { useDialog } from "./hooks/useDialog";
+// import { useModal } from "./hooks/useModal";
+const bgColor = blueGrey[50];
+const wrapperStyle = {
+  p: 5,
+  bgcolor: bgColor,
+  width: "calc(100vw - 65px)",
+  minHeight: "calc(100vh - 65px)",
+  boxSizing: "border-box",
+};
 
 function App() {
-  const showToast = useToast();
-  const showDialog = useDialog();
+  // const showToast = useToast();
+  // const showDialog = useDialog();
+  // const showModal = useModal();
 
   return (
     <Layout>
-      <Box sx={{ p: 5, display: "flex", gap: "10px" }}>
-        <Button
-          variant="contained"
-          onClick={() => {
-            showToast("Hello toast");
-          }}
-        >
-          Toggle toast
-        </Button>
-        {/* <NestedModal /> */}
-        <Button
+      {/* <Button
           variant="contained"
           onClick={() => {
             showDialog("new dialog");
           }}
         >
           dialog
-        </Button>
+        </Button> */}
+      <Box sx={wrapperStyle}>
+        <Routes>
+          <Route path="/" element={<HomeScreen />}></Route>
+          <Route path="/categories" element={<CategoriesScreen />}></Route>
+        </Routes>
       </Box>
     </Layout>
   );

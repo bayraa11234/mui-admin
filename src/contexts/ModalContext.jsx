@@ -2,6 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
+import { useState } from "react";
 
 const style = {
   position: "absolute",
@@ -48,8 +49,11 @@ function ChildModal() {
   );
 }
 
-export function NestedModal() {
+export const ModalContext = React.createContext(null);
+
+export function ModalProvider({ children }) {
   const [open, setOpen] = React.useState(false);
+  const [message, setMessage] = useState(false);
   const handleOpen = () => {
     setOpen(true);
   };
@@ -59,23 +63,26 @@ export function NestedModal() {
 
   return (
     <div>
-      <Button onClick={handleOpen} variant="contained">
+      <ModalContext.Provider value={{ setOpen, setMessage }}>
+        {children}
+        {/* <Button onClick={handleOpen} variant="contained">
         Open modal
-      </Button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="parent-modal-title"
-        aria-describedby="parent-modal-description"
-      >
-        <Box sx={{ ...style, width: 400 }}>
-          <h2 id="parent-modal-title">Text in a modal</h2>
-          <p id="parent-modal-description">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </p>
-          <ChildModal />
-        </Box>
-      </Modal>
+      </Button> */}
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="parent-modal-title"
+          aria-describedby="parent-modal-description"
+        >
+          <Box sx={{ ...style, width: 400 }}>
+            <h2 id="parent-modal-title">Text in a modal</h2>
+            <p id="parent-modal-description">
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            </p>
+            <ChildModal />
+          </Box>
+        </Modal>
+      </ModalContext.Provider>
     </div>
   );
 }
