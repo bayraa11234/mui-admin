@@ -5,6 +5,7 @@ import { BreadCrumbs } from "../components";
 import { DataGrid } from "@mui/x-data-grid";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const columns = [
   { field: "id", headerName: "#", width: 50 },
@@ -70,7 +71,9 @@ export const CategoriesScreen = () => {
           Categories
         </Typography>
         <Stack sx={{ flexDirection: "row", justifyContent: "space-between" }}>
-          <Button variant="contained">New</Button>
+          <Link to={"new"}>
+            <Button variant="contained">New</Button>
+          </Link>
           <Button variant="contained">Filter</Button>
         </Stack>
         <Box sx={{ height: 400, width: "100%", mt: 3 }}>

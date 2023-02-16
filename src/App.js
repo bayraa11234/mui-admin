@@ -3,6 +3,7 @@ import { blueGrey } from "@mui/material/colors";
 import { Route, Routes } from "react-router";
 import { Layout } from "./components/Layout";
 import { CategoriesScreen, HomeScreen } from "./Pages";
+import { CategoryCreateScreen } from "./Pages/CategoryCreateScreen";
 // import { useToast } from "./hooks";
 // import { useDialog } from "./hooks/useDialog";
 // import { useModal } from "./hooks/useModal";
@@ -34,6 +35,10 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeScreen />}></Route>
           <Route path="/categories" element={<CategoriesScreen />}></Route>
+          <Route
+            path="/categories/new"
+            element={<CategoryCreateScreen />}
+          ></Route>
         </Routes>
       </Box>
     </Layout>
