@@ -68,19 +68,6 @@ export const CategoryCreateScreen = () => {
           multiline
           maxRows={4}
         />
-        <Stack
-          sx={{
-            flexDirection: "row",
-            justifyContent: "flex-end",
-            gap: "10px",
-            mt: 3,
-          }}
-        >
-          <Button variant="contained">Save</Button>
-          <Link to={"/categories"}>
-            <Button variant="contained">Cancel</Button>
-          </Link>
-        </Stack>
       </Stack>
     </>
   );
