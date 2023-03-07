@@ -1,12 +1,12 @@
-import { useContext } from "react";
-import { DialogContext } from "../contexts";
+// import { useContext } from "react";
+// import { DialogContext } from "../contexts";
 
-export const useDialog = () => {
-  const { setOpen, setMessage } = useContext(DialogContext);
+// export const useDialog = () => {
+//   const { setOpen, setMessage } = useContext(DialogContext);
 
-  const showDialog = (msg = "tatgalz") => {
-    setMessage(msg);
-    setOpen(true);
-  };
-  return showDialog;
-};
+//   const showDialog = (msg = "tatgalz") => {
+//     setMessage(msg);
+//     setOpen(true);
+//   };
+//   return showDialog;
+// };
