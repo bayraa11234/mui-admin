@@ -16,6 +16,10 @@ export function DialogProvider({ children }) {
     setOpen(true);
   };
 
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div>
       <DialogContext.Provider value={{ setOpen, setMessage }}>
