@@ -25,24 +25,24 @@ const breadCrumbs = [
 export const CategoryCreateScreen = () => {
   const [categories, setCategories] = useState("");
 
-  // const submit = () => {
-  //   axios
-  //     .post("http://localhost:8000/categories", { name })
-  //     .then((res) => {
-  //       toast.success("Амжилттай нэмэгдлээ");
-  //       afterSubmit(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       toast.error("Алдаа гарлаа");
-  //     });
-  //   app.post("/categories", jsonParser, (req, res) => {
-  //     const { name } = req.body;
-  //     const newCategories = { id: nextCatId++, name };
-  //     updateCategoriesFile();
-  //     res.send(newCategories);
-  //   });
-  // };
+  const submit = () => {
+    axios
+      .post("http://localhost:8000/categories", { name })
+      .then((res) => {
+        toast.success("Амжилттай нэмэгдлээ");
+        afterSubmit(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Алдаа гарлаа");
+      });
+    app.post("/categories", jsonParser, (req, res) => {
+      const { name } = req.body;
+      const newCategories = { id: nextCatId++, name };
+      updateCategoriesFile();
+      res.send(newCategories);
+    });
+  };
 
   useEffect(() => {
     axios.get("http://localhost:8000/categories").then((res) => {
