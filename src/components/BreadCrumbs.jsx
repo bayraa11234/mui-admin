@@ -2,15 +2,15 @@ import { NavigateNext } from "@mui/icons-material";
 import { Breadcrumbs, Link, Typography } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 
-const styles = {
-  breadcrumbs: {
-    bgcolor: "white",
-    p: 2,
-    borderRadius: 2,
-    boxShadow: "0 0 5px rgba(0,0,0,.1)",
-  },
-  link: { display: "flex", alignItems: "center" },
-};
+// const styles = {
+//   breadcrumbs: {
+//     bgcolor: "white",
+//     p: 2,
+//     borderRadius: 2,
+//     boxShadow: "0 0 5px rgba(0,0,0,.1)",
+//   },
+//   link: { display: "flex", alignItems: "center" },
+// };
 
 export const BreadCrumbs = ({ items }) => {
   if (!items) {
