@@ -12,9 +12,9 @@ root.render(
     <React.StrictMode>
       <ToastProvider>
         <DialogProvider>
-          {/* <ModalProvider>
+          <ModalProvider>
             <App />
-          </ModalProvider> */}
+          </ModalProvider>
         </DialogProvider>
       </ToastProvider>
     </React.StrictMode>
