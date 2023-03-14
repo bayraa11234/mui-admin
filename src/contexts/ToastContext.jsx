@@ -15,18 +15,6 @@ export const ToastProvider = ({ children }) => {
   };
 
   return (
-    <ToastContext.Provider value={{ setType, setMessage, setOpen }}>
-      {children}
-      <Snackbar
-        open={open}
-        autoHideDuration={6000}
-        onClose={handleClose}
-        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-      >
-        <Alert onClose={handleClose} severity={type} sx={{ width: "100%" }}>
-          {message}
-        </Alert>
-      </Snackbar>
-    </ToastContext.Provider>
+    
   );
 };
