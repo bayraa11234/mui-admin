@@ -1,3 +1,12 @@
+import Toolbar from "@mui/material/Toolbar";
+import CssBaseline from "@mui/material/CssBaseline";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import { Avatar } from "@mui/material";
+import MuiAppBar from "@mui/material/AppBar";
+import { styled } from "@mui/material/styles";
+
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(["width", "margin"], {
